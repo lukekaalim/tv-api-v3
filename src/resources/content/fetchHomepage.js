@@ -23,13 +23,13 @@ const getHomePageUrl = (config: Config): string =>
 const fetchHomepage = (config: Config): Promise<Array<Resource>> => (
   fetchJSON(getHomePageUrl(config))
     .then((page: HomepageResponse) => {
-      const itemIds = page.items.map(item => item.id);
+      const itemsIds = page.items.map(item => item.id);
 
-      return Promise.all(itemIds.map(id => fetchItem(config, id)))
+      return Promise.all(itemsIds.map(id => fetchItem(config, id)))
         .then(itemsResources => [
           ...itemsResources.reduce(flatten, []),
           { type: 'url-meta', url: getHomePageUrl(config), response: page, id: uuid() },
-          { type: 'page', id: page.id, items: itemIds },
+          { type: 'page', id: page.id, itemsIds },
         ]);
     })
 );
