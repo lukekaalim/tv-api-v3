@@ -1,0 +1,31 @@
+{
+  "name": "9now-tv-api-v3",
+  "version": "1.0.0",
+  "description": "Experimental Version of TV-API for 9Now",
+  "main": "build/index.js",
+  "scripts": {
+    "type": "flow-typed install",
+    "build": "babel src -d build",
+    "dev:open": "opn http://127.0.0.1:8080",
+    "dev:build": "babel src -w -d build",
+    "dev:run": "nodemon",
+    "dev": "concurrently -r \"npm:dev:*\""
+  },
+  "author": "luke kaalim",
+  "license": "MIT",
+  "dependencies": {
+    "node-fetch": "^2.2.0",
+    "restify": "^7.2.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-flow": "^6.23.0",
+    "concurrently": "^3.6.1",
+    "flow-bin": "^0.79.1",
+    "flow-typed": "^2.5.1",
+    "nodemon": "^1.18.3",
+    "opn-cli": "^3.1.0"
+  }
+}
