@@ -5,6 +5,7 @@ declare module 'restify' {
     body: string,
   };
   declare type Response = {
+    status: (status: 500) => void,
     send: (any) => void,
     end: () => void,
     redirect: (redirectTo: string, next: Next) => void,

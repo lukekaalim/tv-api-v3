@@ -14,7 +14,7 @@
  */
 
 declare module 'node-fetch' {
-  declare module.exports: any;
+  declare export default typeof fetch;
 }
 
 /**
