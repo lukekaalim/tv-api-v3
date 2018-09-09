@@ -17,4 +17,8 @@ const app = (config: Config) => {
   });
 };
 
-app({ environment: 'uat', version: '1.0.0' });
+app({
+  environment: 'prod',
+  version: '1.0.0',
+  imageResizerServerUrl: '127.0.0.1:8081',
+});
