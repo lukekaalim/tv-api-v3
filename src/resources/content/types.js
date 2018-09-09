@@ -1,23 +1,20 @@
 // @flow
 import type { GUID } from '../../types';
 
-import type { EpisodeID } from '../video/types';
+import type { CMSCarouselResource } from './buildCarouselResource';
+import type { CMSCarouselSlideResource } from './buildCarouselSlideResource';
+import type { CMSCuratedClipListResource } from './buildCuratedClipListResource';
+import type { CMSCuratedEpisodeListResource } from './buildCuratedEpisodeListResource';
+import type { CMSCuratedTvSeriesListResource } from './buildCuratedTvSeriesListResource';
+import type { CMSHomePageResource } from './buildHomePageResource';
 
-export opaque type ItemID: GUID = GUID;
-export opaque type TemplateID: GUID = GUID;
+export type CMSResource =
+  | CMSCarouselResource
+  | CMSCarouselSlideResource
+  | CMSCuratedClipListResource
+  | CMSCuratedEpisodeListResource
+  | CMSCuratedTvSeriesListResource
+  | CMSHomePageResource
 
-type ListContentResource = {
-  type: 'list',
-  id: ItemID,
-  itemsIds: Array<EpisodeID>,
-};
-
-type HomepageContentResource = {
-  type: 'page',
-  id: ItemID,
-  itemsIds: Array<ItemID>,
-};
-
-export type ContentResource =
-  | ListContentResource
-  | HomepageContentResource;
+export opaque type CMSItemID: GUID = GUID;
+export opaque type CMSTemplateID: GUID = GUID;
