@@ -1,6 +1,11 @@
 // @flow
 
 /**
+ * Type implementation for a Uniform Resource Location
+ */
+export opaque type URL: string = string;
+
+/**
  * Type implementation for a Globally Unique Identifier
  */
 export opaque type GUID: string = string;
@@ -16,4 +21,5 @@ export type Environment = 'prod' | 'stag' | 'uat' | 'test' | 'local';
 export type Config = {
   environment: Environment,
   version: string,
+  imageResizerServerUrl: string,
 };
