@@ -1,15 +1,24 @@
 // @flow
-import type { GUID } from '../../types';
+import type { URL } from '../../types';
 
-export opaque type EpisodeID: GUID = GUID;
+export type { VMSResource } from './buildVideoResource';
+
+export opaque type VMSEpisodeID: number = number;
+export opaque type VMSTvSeriesID: number = number;
+export opaque type VMSClipID: number = number;
+export opaque type VMSImageID: number = number;
+export opaque type VMSSeasonID: number = number;
+export opaque type VMSGenreID: number = number;
 
 export type EpisodeVideoResource = {
   type: 'vmsEpisode',
-  id: EpisodeID,
+  id: VMSEpisodeID,
   name: string,
   displayName: string,
   slug: string,
 };
 
-export type VideoResource =
-  | EpisodeVideoResource;
+export type ImageResource = {
+  type: 'image',
+  url: URL,
+};
